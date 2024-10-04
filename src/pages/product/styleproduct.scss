@@ -1,0 +1,114 @@
+// Definisi warna gradasi
+$color-start: #000; // Hitam
+$color-middle: #aaa; // Abu-abu
+$color-end: #fff; // Putih
+
+// Menggunakan Google Fonts untuk font yang menarik
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vh; // Tinggi kontainer
+  width: 100%; // Lebar penuh
+  background-color: #f0f0f0; // Warna latar belakang
+  padding: 0 20px; // Tambahkan padding jika diperlukan
+}
+
+.gradient-text {
+  font-size: 4rem; // Ukuran font
+  font-family: "Roboto", sans-serif; // Font yang menarik
+  background: linear-gradient(
+    to right,
+    $color-start,
+    $color-middle,
+    $color-end
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); // Efek bayangan teks
+}
+
+$card-bg: #ffffff;
+$card-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+$card-border-radius: 8px;
+$card-padding: 16px;
+$badge-bg: #e0e0e0;
+$badge-secondary-bg: #ff4081;
+$badge-outline-bg: transparent;
+$badge-border: 1px solid #cccccc;
+
+.Grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px; // Increased gap for more space between cards
+  padding: 30px;
+  background: linear-gradient(135deg, #ffffff 0%, #afafaf 100%);
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.Card {
+  background-color: $card-bg;
+  box-shadow: $card-shadow;
+  border-radius: $card-border-radius;
+  width: 24rem; // 96 dalam satuan rem
+  overflow: hidden; // untuk menjaga sudut
+  padding: 10px;
+  cursor: pointer;
+
+
+  
+  &-body {
+    padding: $card-padding;
+    margin-top: 3px;
+  }
+
+  &-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+
+  &-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 12px;
+    text-align: center;
+  }
+
+  .badge {
+    background-color: $badge-bg;
+    border-radius: 12px;
+    padding: 4px 8px;
+    margin-left: 8px;
+
+    &.badge-secondary {
+      background-color: $badge-secondary-bg;
+      color: white;
+    }
+
+    &.badge-outline {
+      background-color: $badge-outline-bg;
+      border: $badge-border;
+      color: #333;
+    }
+  }
+}
+
+figure {
+  margin: 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block; // untuk menghindari spasi di bawah gambar
+}
